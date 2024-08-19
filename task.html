@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Management</title>
+  </head>
+  <body>
+    <h1>Task Management</h1>
+    <button class="Task">Task</button>
+    <button class="View Task">View Task</button>
+    <button class="Sort Task">Sort Task</button>
+    <button class="Search Task">Search Task</button>
+    <button class="Exit">Exit</button>
+    <h1 id="input"></h1>
+
+    <script>
+      function task() {
+        let array = [];
+        let Id = parseFloat(prompt("Id"));
+        let Name = prompt("Name");
+        let description = prompt("description");
+        let date = prompt("MM/DD/YYYY");
+        let dates = date.split("/");
+
+        console.log("kasflkjas");
+        
+
+        let list = {
+          id: Id,
+          name: Name,
+          description: description,
+          duedate: date,
+        };
+        array.push(list);
+        let data = array.map(
+          (a) => `Task Id:${a.id}name:${a.name}Description:${a.description}`
+        );
+      }
+
+      function viewTask() {console.log("zxczcz");
+      };
+
+      // document.getElementById("input").innerText = data;
+
+      var menu = function () {
+        do {
+          var option = parseInt(prompt(
+            "Choose an option:\n1. Task\n2. View Task\n3. Sort Task\n4. Search Task\n5. Exit"
+          ));
+          switch (option) {
+            case 1:
+              console.log("one");
+              task();
+              break;
+            case 2:
+              viewTask();
+              console.log("two");
+              break;
+            case 3:
+              console.log("three");
+              sortTask();
+              break;
+            case 4:
+              console.log("four");
+              searchTask();
+              break;
+            case 5:
+              console.log("five");
+              exit();
+              break;
+            default:
+          }
+        } while (option != 5);
+      };
+
+      menu();
+    </script>
+  </body>
+</html>
